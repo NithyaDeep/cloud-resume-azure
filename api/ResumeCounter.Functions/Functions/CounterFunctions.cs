@@ -39,6 +39,7 @@ public async Task<HttpResponseData> Health(
     [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "health")] HttpRequestData req,
     CancellationToken ct)
 {
+    //adding comment
     var res = req.CreateResponse(HttpStatusCode.OK);
     await res.WriteAsJsonAsync(new { status = "ok" }, cancellationToken: ct);
     return res;
